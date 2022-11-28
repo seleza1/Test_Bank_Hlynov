@@ -12,10 +12,12 @@ final class MainViewController: UIViewController {
     let networkManeger = NetworkManager()
     
     @IBOutlet var biographyButton: UIButton!
+    
     var isGradientAdded: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManeger.getTrack()
+
         
     }
 }

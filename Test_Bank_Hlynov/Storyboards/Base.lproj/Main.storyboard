@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zVs-Xq-sn3">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u86-fy-XfY">
-                                <rect key="frame" x="20" y="568" width="335" height="59"/>
+                                <rect key="frame" x="20" y="637" width="374" height="59"/>
                                 <color key="backgroundColor" red="0.79607843140000001" green="0.53725490200000003" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="xH1-cp-AC0"/>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9De-aU-NS5">
-                                <rect key="frame" x="20" y="490" width="335" height="59"/>
+                                <rect key="frame" x="20" y="559" width="374" height="59"/>
                                 <color key="backgroundColor" red="0.70047253369999996" green="0.75823313000000003" blue="0.92158967260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="wzt-zY-6kA"/>
@@ -52,16 +52,32 @@
                                     <segue destination="ejF-AO-zaF" kind="show" id="yLY-OZ-g5F"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сервис позволяет найти лучшие треки исполнителей и показывает биографию" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihP-0y-fC1">
+                                <rect key="frame" x="16" y="135" width="382" height="72.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="dance" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-fw-gff">
+                                <rect key="frame" x="0.0" y="217.66666666666666" width="414" height="308.33333333333337"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="u86-fy-XfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2dq-Um-OCf"/>
+                            <constraint firstItem="ihP-0y-fC1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="3oO-47-Xst"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u86-fy-XfY" secondAttribute="trailing" constant="20" id="4ta-8Q-Rl2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u86-fy-XfY" secondAttribute="bottom" constant="40" id="B0b-OU-WBd"/>
+                            <constraint firstItem="ihP-0y-fC1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GeA-yj-QAa"/>
+                            <constraint firstItem="9De-aU-NS5" firstAttribute="top" secondItem="6Kg-fw-gff" secondAttribute="bottom" constant="33" id="Nyo-ME-ugk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihP-0y-fC1" secondAttribute="trailing" constant="16" id="T9w-jA-ZTZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9De-aU-NS5" secondAttribute="trailing" constant="20" id="WOc-Fo-Hmq"/>
+                            <constraint firstItem="6Kg-fw-gff" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="X2i-xc-6fo"/>
+                            <constraint firstItem="6Kg-fw-gff" firstAttribute="top" secondItem="ihP-0y-fC1" secondAttribute="bottom" constant="10" id="XMk-Sa-22L"/>
                             <constraint firstItem="9De-aU-NS5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ya0-vX-bNa"/>
                             <constraint firstItem="u86-fy-XfY" firstAttribute="top" secondItem="9De-aU-NS5" secondAttribute="bottom" constant="19" id="giL-Aj-hj8"/>
+                            <constraint firstItem="6Kg-fw-gff" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hCs-QW-V7x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Поиск музыкальных исполнителей" id="N4q-vM-Gn8"/>
@@ -71,24 +87,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141.5999999999999" y="-18.440779610194905"/>
+            <point key="canvasLocation" x="1140.5797101449277" y="-18.75"/>
         </scene>
         <!--Лучшие треки-->
         <scene sceneID="JG7-t7-VFQ">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="vSB-d3-KZt" customClass="BestTrackViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d0b-Ws-xCc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRz-97-8Tw">
-                                <rect key="frame" x="109" y="568" width="158" height="35"/>
+                                <rect key="frame" x="128" y="650" width="158" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Вернуться назад"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybC-uV-MoF">
-                                <rect key="frame" x="148" y="282" width="80" height="35"/>
+                                <rect key="frame" x="167" y="281" width="80" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Искать"/>
@@ -98,21 +114,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Лучшие треки" largeTitleDisplayMode="always" id="aTv-9x-9gH"/>
+                    <connections>
+                        <outlet property="backButton" destination="WRz-97-8Tw" id="MIm-wm-jOX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXR-Hs-o51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="296"/>
+            <point key="canvasLocation" x="2000.0000000000002" y="295.92391304347831"/>
         </scene>
         <!--Биография-->
         <scene sceneID="yd2-xg-iZK">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="ejF-AO-zaF" customClass="BiographyViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ksd-Yz-NDL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-EO-xB1">
-                                <rect key="frame" x="0.0" y="97" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="44"/>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLW-J7-DbG">
                                 <rect key="frame" x="147" y="215" width="80" height="35"/>
@@ -140,6 +159,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Биография" id="n8H-h3-jJ3"/>
+                    <connections>
+                        <outlet property="backButton" destination="kwV-CC-kad" id="Ji1-oy-aB0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iW2-iq-WAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,7 +174,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zVs-Xq-sn3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="UOK-F2-cNL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -165,6 +187,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dance" width="1000" height="1000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
