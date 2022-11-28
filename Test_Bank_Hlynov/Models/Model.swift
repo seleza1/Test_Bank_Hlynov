@@ -4,6 +4,7 @@
 //
 //  Created by user on 28.11.2022.
 
+
 import Foundation
 
 // MARK: - Welcome
@@ -27,7 +28,9 @@ struct WelcomeArtist: Decodable {
 // MARK: - Bio
 struct Bio: Decodable, Encodable {
     let links: Links
-    let published, summary, content: String
+    let published: String
+    let summary: String
+    let content: String
 }
 
 // MARK: - Links
@@ -37,7 +40,8 @@ struct Links: Decodable, Encodable {
 
 // MARK: - Link
 struct Link: Decodable, Encodable {
-    let text, rel: String
+    let text: String
+    let rel: String
     let href: String
 
     enum CodingKeys: String, CodingKey {
@@ -71,7 +75,8 @@ struct ArtistElement: Codable {
 
 // MARK: - Stats
 struct Stats: Codable {
-    let listeners, playcount: String
+    let listeners: String
+    let playcount: String
 }
 
 // MARK: - Tags

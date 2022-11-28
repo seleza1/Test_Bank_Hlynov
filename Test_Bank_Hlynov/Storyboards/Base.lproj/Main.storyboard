@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Поиск музыкальных исполнителей-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,35 +16,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u86-fy-XfY">
-                                <rect key="frame" x="94" y="536" width="186" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u86-fy-XfY">
+                                <rect key="frame" x="20" y="568" width="335" height="59"/>
+                                <color key="backgroundColor" red="0.79607843140000001" green="0.53725490200000003" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="xH1-cp-AC0"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Лучшие треки"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="vSB-d3-KZt" kind="presentation" id="Mpr-jq-GeG"/>
+                                    <segue destination="vSB-d3-KZt" kind="show" id="bza-KY-lzs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9De-aU-NS5">
-                                <rect key="frame" x="94" y="430" width="186" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9De-aU-NS5">
+                                <rect key="frame" x="20" y="490" width="335" height="59"/>
+                                <color key="backgroundColor" red="0.70047253369999996" green="0.75823313000000003" blue="0.92158967260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="wzt-zY-6kA"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Биография артиста"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="ejF-AO-zaF" kind="push" id="k85-8z-nzd"/>
+                                    <segue destination="ejF-AO-zaF" kind="show" id="yLY-OZ-g5F"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u86-fy-XfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2dq-Um-OCf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u86-fy-XfY" secondAttribute="trailing" constant="20" id="4ta-8Q-Rl2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u86-fy-XfY" secondAttribute="bottom" constant="40" id="B0b-OU-WBd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9De-aU-NS5" secondAttribute="trailing" constant="20" id="WOc-Fo-Hmq"/>
+                            <constraint firstItem="9De-aU-NS5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ya0-vX-bNa"/>
+                            <constraint firstItem="u86-fy-XfY" firstAttribute="top" secondItem="9De-aU-NS5" secondAttribute="bottom" constant="19" id="giL-Aj-hj8"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="N4q-vM-Gn8"/>
+                    <navigationItem key="navigationItem" title="Поиск музыкальных исполнителей" id="N4q-vM-Gn8"/>
+                    <connections>
+                        <outlet property="biographyButton" destination="9De-aU-NS5" id="nRY-jr-w0z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="-18"/>
+            <point key="canvasLocation" x="1141.5999999999999" y="-18.440779610194905"/>
         </scene>
-        <!--Best Track View Controller-->
+        <!--Лучшие треки-->
         <scene sceneID="JG7-t7-VFQ">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="vSB-d3-KZt" customClass="BestTrackViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,12 +81,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oC-gK-hy6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                                <items>
-                                    <navigationItem title="Лучшие треки" id="13F-a0-Eq4"/>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRz-97-8Tw">
                                 <rect key="frame" x="109" y="568" width="158" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -73,18 +96,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="49D-ol-Wop"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="8oC-gK-hy6" firstAttribute="leading" secondItem="49D-ol-Wop" secondAttribute="leading" id="Eaz-yG-gL2"/>
-                            <constraint firstItem="8oC-gK-hy6" firstAttribute="top" secondItem="49D-ol-Wop" secondAttribute="top" id="Ugx-Oc-NaB"/>
-                            <constraint firstAttribute="trailing" secondItem="8oC-gK-hy6" secondAttribute="trailing" id="si1-ld-ozN"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Лучшие треки" largeTitleDisplayMode="always" id="aTv-9x-9gH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXR-Hs-o51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="296"/>
         </scene>
-        <!--Biography View Controller-->
+        <!--Биография-->
         <scene sceneID="yd2-xg-iZK">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="ejF-AO-zaF" customClass="BiographyViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,10 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-EO-xB1">
-                                <rect key="frame" x="0.0" y="97" width="375" height="96"/>
-                                <items>
-                                    <navigationItem title="Биография" id="TiX-Su-FI8"/>
-                                </items>
+                                <rect key="frame" x="0.0" y="97" width="375" height="44"/>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLW-J7-DbG">
                                 <rect key="frame" x="147" y="215" width="80" height="35"/>
@@ -123,7 +139,7 @@
                             <constraint firstItem="4dc-EO-xB1" firstAttribute="top" secondItem="nst-Xv-4vZ" secondAttribute="top" constant="1" id="ry6-al-DMI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="n8H-h3-jJ3"/>
+                    <navigationItem key="navigationItem" title="Биография" id="n8H-h3-jJ3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iW2-iq-WAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

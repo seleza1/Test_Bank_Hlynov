@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BestTrackViewController: UIViewController {
+final class BestTrackViewController: UIViewController {
     
     let searchController = UISearchController()
     
