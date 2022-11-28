@@ -2,35 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>App Tra</key>
-	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<string>YES</string>
+		<string>NO</string>
 		<key>NSAllowsArbitraryLoadsUsageDescription</key>
 		<string>NSAllowsArbitraryLoads</string>
-	</dict>
-	<key>NSExceptionDomains</key>
-	<dict>
-		<key>New item</key>
-		<string>NSAppTransportSecurity</string>
-		<key>New item - 2</key>
-		<string>&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
-&lt;dict&gt;
-  &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;
-  &lt;false/&gt;
-  &lt;key&gt;NSExceptionDomains&lt;/key&gt;
-  &lt;dict&gt;
-    &lt;key&gt;cocoacasts.com&lt;/key&gt;
-    &lt;dict&gt;
-      &lt;key&gt;NSIncludesSubdomains&lt;/key&gt;
-      &lt;true/&gt;
-      &lt;key&gt;NSExceptionAllowsInsecureHTTPLoads&lt;/key&gt;
-      &lt;true/&gt;
-    &lt;/dict&gt;
-  &lt;/dict&gt;
-&lt;/dict&gt;</string>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>audioscrobbler.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
