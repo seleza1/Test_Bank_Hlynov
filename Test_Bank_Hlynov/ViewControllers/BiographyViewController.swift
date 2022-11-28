@@ -20,30 +20,20 @@ final class BiographyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
-        fetchTrack()
+        setupBackButton()
     }
     
-    private func fetchTrack() {
-        networkManeger.getTrack { result in
-            switch result {
-            case .success(let track):
-                self.tracks = track
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+
     
     private func setupSearchController() {
         
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Кого ищем?"
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
     }
-}
-
-extension BiographyViewController {
     
-    func setupBackButton() {
+    private func setupBackButton() {
         backButton.frame = CGRect(x: 40, y: 240, width: 320, height: 50)
         let attributedString = NSAttributedString(string: NSLocalizedString("Вернуться назад", comment: ""), attributes:[
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16.0),
@@ -53,5 +43,20 @@ extension BiographyViewController {
         backButton.setAttributedTitle(attributedString, for: .normal)
         self.view.addSubview(backButton)
     }
+}
+
+extension BiographyViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        networkManeger.getTrack { [weak self]result in
+            switch result {
+            case .success(let track):
+                self?.tracks = track
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
+
 
 }

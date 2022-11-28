@@ -39,11 +39,11 @@ final class BestTrackViewController: UIViewController {
     private func setupSearchController() {
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Кого ищем?"
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
     }
-}
-
-extension BestTrackViewController {
-    func setupBackButton() {
+    
+    private func setupBackButton() {
         backButton.frame = CGRect(x: 40, y: 240, width: 320, height: 50)
         let attributedString = NSAttributedString(string: NSLocalizedString("Вернуться назад", comment: ""), attributes:[
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16.0),
@@ -52,5 +52,11 @@ extension BestTrackViewController {
         ])
         backButton.setAttributedTitle(attributedString, for: .normal)
         self.view.addSubview(backButton)
+    }
+}
+
+extension BestTrackViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }
