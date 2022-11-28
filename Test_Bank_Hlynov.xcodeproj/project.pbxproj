@@ -15,6 +15,9 @@
 		CE790BDB29349ADC00775561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE790BD929349ADC00775561 /* LaunchScreen.storyboard */; };
 		CE88DDFE2934A5A600253F6D /* BiographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DDFD2934A5A600253F6D /* BiographyViewController.swift */; };
 		CE88DE002934A5B600253F6D /* BestTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DDFF2934A5B600253F6D /* BestTrackViewController.swift */; };
+		CE88DE262934DF6200253F6D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE252934DF6200253F6D /* Model.swift */; };
+		CE88DE282934DF6C00253F6D /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE272934DF6C00253F6D /* Url.swift */; };
+		CE88DE2A2934F25D00253F6D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE292934F25D00253F6D /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		CE790BDC29349ADC00775561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE88DDFD2934A5A600253F6D /* BiographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyViewController.swift; sourceTree = "<group>"; };
 		CE88DDFF2934A5B600253F6D /* BestTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTrackViewController.swift; sourceTree = "<group>"; };
+		CE88DE252934DF6200253F6D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CE88DE272934DF6C00253F6D /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
+		CE88DE292934F25D00253F6D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 		CE790BCD29349AD800775561 /* Test_Bank_Hlynov */ = {
 			isa = PBXGroup;
 			children = (
+				CE88DE2B2934F27700253F6D /* Models */,
+				CE88DE2C2934F28000253F6D /* Url */,
+				CE88DE2D2934F28800253F6D /* NetworkManager */,
 				CE88DE012934A5C400253F6D /* App */,
 				CE88DE022934A5D300253F6D /* ViewControllers */,
 				CE88DE032934A5DE00253F6D /* Storyboards */,
@@ -103,6 +112,30 @@
 				CE790BD729349ADC00775561 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE88DE2B2934F27700253F6D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE88DE252934DF6200253F6D /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE88DE2C2934F28000253F6D /* Url */ = {
+			isa = PBXGroup;
+			children = (
+				CE88DE272934DF6C00253F6D /* Url.swift */,
+			);
+			path = Url;
+			sourceTree = "<group>";
+		};
+		CE88DE2D2934F28800253F6D /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE88DE292934F25D00253F6D /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +211,10 @@
 			files = (
 				CE88DE002934A5B600253F6D /* BestTrackViewController.swift in Sources */,
 				CE88DDFE2934A5A600253F6D /* BiographyViewController.swift in Sources */,
+				CE88DE282934DF6C00253F6D /* Url.swift in Sources */,
 				CE790BD329349AD800775561 /* MainViewController.swift in Sources */,
+				CE88DE2A2934F25D00253F6D /* NetworkManager.swift in Sources */,
+				CE88DE262934DF6200253F6D /* Model.swift in Sources */,
 				CE790BCF29349AD800775561 /* AppDelegate.swift in Sources */,
 				CE790BD129349AD800775561 /* SceneDelegate.swift in Sources */,
 			);
