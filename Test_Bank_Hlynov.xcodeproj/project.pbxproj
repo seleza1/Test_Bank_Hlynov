@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE02E3BD2935512200A1CD14 /* ModelBestTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02E3BC2935512200A1CD14 /* ModelBestTrack.swift */; };
 		CE790BCF29349AD800775561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BCE29349AD800775561 /* AppDelegate.swift */; };
 		CE790BD129349AD800775561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BD029349AD800775561 /* SceneDelegate.swift */; };
 		CE790BD329349AD800775561 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BD229349AD800775561 /* MainViewController.swift */; };
@@ -15,12 +16,13 @@
 		CE790BDB29349ADC00775561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE790BD929349ADC00775561 /* LaunchScreen.storyboard */; };
 		CE88DDFE2934A5A600253F6D /* BiographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DDFD2934A5A600253F6D /* BiographyViewController.swift */; };
 		CE88DE002934A5B600253F6D /* BestTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DDFF2934A5B600253F6D /* BestTrackViewController.swift */; };
-		CE88DE262934DF6200253F6D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE252934DF6200253F6D /* Model.swift */; };
+		CE88DE262934DF6200253F6D /* ModelBiography.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE252934DF6200253F6D /* ModelBiography.swift */; };
 		CE88DE282934DF6C00253F6D /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE272934DF6C00253F6D /* Url.swift */; };
 		CE88DE2A2934F25D00253F6D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE292934F25D00253F6D /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE02E3BC2935512200A1CD14 /* ModelBestTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelBestTrack.swift; path = ../../../../Desktop/ModelBestTrack.swift; sourceTree = "<group>"; };
 		CE790BCB29349AD800775561 /* Test_Bank_Hlynov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_Bank_Hlynov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE790BCE29349AD800775561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE790BD029349AD800775561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +33,7 @@
 		CE790BDC29349ADC00775561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE88DDFD2934A5A600253F6D /* BiographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyViewController.swift; sourceTree = "<group>"; };
 		CE88DDFF2934A5B600253F6D /* BestTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTrackViewController.swift; sourceTree = "<group>"; };
-		CE88DE252934DF6200253F6D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CE88DE252934DF6200253F6D /* ModelBiography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBiography.swift; sourceTree = "<group>"; };
 		CE88DE272934DF6C00253F6D /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		CE88DE292934F25D00253F6D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				CE790BD229349AD800775561 /* MainViewController.swift */,
-				CE88DDFF2934A5B600253F6D /* BestTrackViewController.swift */,
 				CE88DDFD2934A5A600253F6D /* BiographyViewController.swift */,
+				CE88DDFF2934A5B600253F6D /* BestTrackViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -117,7 +119,8 @@
 		CE88DE2B2934F27700253F6D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE88DE252934DF6200253F6D /* Model.swift */,
+				CE88DE252934DF6200253F6D /* ModelBiography.swift */,
+				CE02E3BC2935512200A1CD14 /* ModelBestTrack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,9 +217,10 @@
 				CE88DE282934DF6C00253F6D /* Url.swift in Sources */,
 				CE790BD329349AD800775561 /* MainViewController.swift in Sources */,
 				CE88DE2A2934F25D00253F6D /* NetworkManager.swift in Sources */,
-				CE88DE262934DF6200253F6D /* Model.swift in Sources */,
+				CE88DE262934DF6200253F6D /* ModelBiography.swift in Sources */,
 				CE790BCF29349AD800775561 /* AppDelegate.swift in Sources */,
 				CE790BD129349AD800775561 /* SceneDelegate.swift in Sources */,
+				CE02E3BD2935512200A1CD14 /* ModelBestTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

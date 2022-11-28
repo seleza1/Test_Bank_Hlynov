@@ -9,7 +9,6 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    private var tracks: [Tracks] = []
     
     let networkManeger = NetworkManager()
     
@@ -17,19 +16,9 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchTrack()
     }
     
-    private func fetchTrack() {
-        networkManeger.getTrack { result in
-            switch result {
-            case .success(let track):
-                self.tracks = track
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+
 }
 
 
