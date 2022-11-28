@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Decodable {
+struct Tracks: Decodable {
     let artist: WelcomeArtist
 }
 

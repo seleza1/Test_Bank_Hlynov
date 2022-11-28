@@ -7,25 +7,25 @@
 
 import UIKit
 
+
 final class NetworkManager: UIViewController {
     
-    var welcome: [Welcome] = []
+    var welcome: [Tracks] = []
     
-     func getTrack() {
+    func getTrack(completion: @escaping(Result<[Tracks], Error>) -> Void) {
         guard let url = URL(string: Url.url) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let error, let response, let data else {
-                print("error")
+                completion(.failure(error!))
                 return
             }
-            
             print(response)
             do {
-                let json = try JSONDecoder().decode([Welcome].self, from: data)
+                let json = try JSONDecoder().decode([Tracks].self, from: data)
                 self.welcome = json
                 DispatchQueue.main.async {
-                    print(self.welcome)
+                    completion(.success(json))
                 }
                 
             } catch let error {
@@ -34,8 +34,18 @@ final class NetworkManager: UIViewController {
         }.resume()
     }
     
-    private func getImage() {
-        
+    func fetchImage(from url: URL, completion: @escaping(Result<Data, Error>) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                completion(.failure(error!))
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            DispatchQueue.main.async {
+                completion(.success(data))
+            }
+            
+        }.resume()
     }
     
 }

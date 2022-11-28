@@ -32,5 +32,12 @@ final class BestTrackViewController: UIViewController {
 
 
     }
+    
 
+}
+
+extension BestTrackViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
 }
