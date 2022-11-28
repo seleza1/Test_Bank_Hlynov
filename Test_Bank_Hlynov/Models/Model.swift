@@ -4,21 +4,20 @@
 //
 //  Created by user on 28.11.2022.
 
-
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Tracks
 struct Tracks: Decodable {
-    let artist: WelcomeArtist
+    let artist: TracksArtist
 }
 
-// MARK: - WelcomeArtist
-struct WelcomeArtist: Decodable {
-    let name: String
-    let mbid: String
+// MARK: - TracksArtist
+struct TracksArtist: Decodable {
+    let name, mbid: String
     let url: String
     let image: [Image]
-    let streamable, ontour: String
+    let streamable: String
+    let ontour: String
     let stats: Stats
     let similar: Similar
     let tags: Tags
@@ -26,7 +25,7 @@ struct WelcomeArtist: Decodable {
 }
 
 // MARK: - Bio
-struct Bio: Decodable, Encodable {
+struct Bio: Decodable {
     let links: Links
     let published: String
     let summary: String
@@ -34,12 +33,12 @@ struct Bio: Decodable, Encodable {
 }
 
 // MARK: - Links
-struct Links: Decodable, Encodable {
+struct Links: Decodable {
     let link: Link
 }
 
 // MARK: - Link
-struct Link: Decodable, Encodable {
+struct Link: Decodable {
     let text: String
     let rel: String
     let href: String
@@ -51,7 +50,7 @@ struct Link: Decodable, Encodable {
 }
 
 // MARK: - Image
-struct Image: Codable {
+struct Image: Decodable {
     let text: String
     let size: String
 
@@ -62,30 +61,31 @@ struct Image: Codable {
 }
 
 // MARK: - Similar
-struct Similar: Codable {
+struct Similar: Decodable {
     let artist: [ArtistElement]
 }
 
 // MARK: - ArtistElement
-struct ArtistElement: Codable {
+struct ArtistElement: Decodable {
     let name: String
     let url: String
     let image: [Image]
 }
 
 // MARK: - Stats
-struct Stats: Codable {
+struct Stats: Decodable {
     let listeners: String
     let playcount: String
 }
 
 // MARK: - Tags
-struct Tags: Codable {
+struct Tags: Decodable {
     let tag: [Tag]
 }
 
 // MARK: - Tag
-struct Tag: Codable {
+struct Tag: Decodable {
     let name: String
     let url: String
 }
+

@@ -366,6 +366,8 @@
 				DEVELOPMENT_TEAM = L86P4HUDQ3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test_Bank_Hlynov/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -397,6 +399,8 @@
 				DEVELOPMENT_TEAM = L86P4HUDQ3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test_Bank_Hlynov/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

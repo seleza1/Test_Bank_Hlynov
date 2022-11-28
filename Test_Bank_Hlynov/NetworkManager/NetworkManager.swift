@@ -12,6 +12,8 @@ final class NetworkManager: UIViewController {
     
     var welcome: [Tracks] = []
     
+    let apiKey: String = "f6b4b86d30378ca8d9f43b560d10cdfe"
+    
     func getTrack(completion: @escaping(Result<[Tracks], Error>) -> Void) {
         guard let url = URL(string: Url.url) else { return }
         
