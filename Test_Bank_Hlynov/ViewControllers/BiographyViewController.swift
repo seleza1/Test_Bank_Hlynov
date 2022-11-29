@@ -40,7 +40,8 @@ final class BiographyViewController: UIViewController {
     
     
     @IBAction func abackButton() {
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     private func setupSearchController() {
@@ -49,8 +50,6 @@ final class BiographyViewController: UIViewController {
         searchController.searchBar.placeholder = "Кого ищем?"
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.showsCancelButton = false
-        
     }
     
     private func setupBackButton() {

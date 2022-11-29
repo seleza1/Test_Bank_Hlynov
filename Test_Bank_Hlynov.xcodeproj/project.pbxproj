@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3366802936850900403B0A /* ModelsBestTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33667F2936850900403B0A /* ModelsBestTrack.swift */; };
 		CE790BCF29349AD800775561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BCE29349AD800775561 /* AppDelegate.swift */; };
 		CE790BD129349AD800775561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BD029349AD800775561 /* SceneDelegate.swift */; };
 		CE790BD329349AD800775561 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BD229349AD800775561 /* MainViewController.swift */; };
@@ -16,11 +17,11 @@
 		CE88DDFE2934A5A600253F6D /* BiographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DDFD2934A5A600253F6D /* BiographyViewController.swift */; };
 		CE88DE002934A5B600253F6D /* BestTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DDFF2934A5B600253F6D /* BestTrackViewController.swift */; };
 		CE88DE262934DF6200253F6D /* ModelBiography.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE252934DF6200253F6D /* ModelBiography.swift */; };
-		CE88DE282934DF6C00253F6D /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE272934DF6C00253F6D /* Url.swift */; };
 		CE88DE2A2934F25D00253F6D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DE292934F25D00253F6D /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE33667F2936850900403B0A /* ModelsBestTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsBestTrack.swift; sourceTree = "<group>"; };
 		CE790BCB29349AD800775561 /* Test_Bank_Hlynov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_Bank_Hlynov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE790BCE29349AD800775561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE790BD029349AD800775561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		CE88DDFD2934A5A600253F6D /* BiographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyViewController.swift; sourceTree = "<group>"; };
 		CE88DDFF2934A5B600253F6D /* BestTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTrackViewController.swift; sourceTree = "<group>"; };
 		CE88DE252934DF6200253F6D /* ModelBiography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBiography.swift; sourceTree = "<group>"; };
-		CE88DE272934DF6C00253F6D /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		CE88DE292934F25D00253F6D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +68,6 @@
 			children = (
 				CE88DE012934A5C400253F6D /* App */,
 				CE88DE2B2934F27700253F6D /* Models */,
-				CE88DE2C2934F28000253F6D /* Url */,
 				CE88DE2D2934F28800253F6D /* NetworkManager */,
 				CE88DE022934A5D300253F6D /* ViewControllers */,
 				CE88DE032934A5DE00253F6D /* Storyboards */,
@@ -118,16 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				CE88DE252934DF6200253F6D /* ModelBiography.swift */,
+				CE33667F2936850900403B0A /* ModelsBestTrack.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		CE88DE2C2934F28000253F6D /* Url */ = {
-			isa = PBXGroup;
-			children = (
-				CE88DE272934DF6C00253F6D /* Url.swift */,
-			);
-			path = Url;
 			sourceTree = "<group>";
 		};
 		CE88DE2D2934F28800253F6D /* NetworkManager */ = {
@@ -211,10 +203,10 @@
 			files = (
 				CE88DE002934A5B600253F6D /* BestTrackViewController.swift in Sources */,
 				CE88DDFE2934A5A600253F6D /* BiographyViewController.swift in Sources */,
-				CE88DE282934DF6C00253F6D /* Url.swift in Sources */,
 				CE790BD329349AD800775561 /* MainViewController.swift in Sources */,
 				CE88DE2A2934F25D00253F6D /* NetworkManager.swift in Sources */,
 				CE88DE262934DF6200253F6D /* ModelBiography.swift in Sources */,
+				CE3366802936850900403B0A /* ModelsBestTrack.swift in Sources */,
 				CE790BCF29349AD800775561 /* AppDelegate.swift in Sources */,
 				CE790BD129349AD800775561 /* SceneDelegate.swift in Sources */,
 			);

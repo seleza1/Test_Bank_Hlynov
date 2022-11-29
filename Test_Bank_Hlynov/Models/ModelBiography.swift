@@ -18,4 +18,3 @@ struct Artist: Decodable {
 struct Bio: Decodable {
     let summary: String
 }
-

@@ -31,7 +31,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="VCY-hT-SNf" kind="showDetail" id="zgM-KE-Aoy"/>
+                                    <segue destination="vSB-d3-KZt" kind="show" id="Upr-aS-OS9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9De-aU-NS5">
@@ -49,7 +49,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="S5Z-6r-TeD" kind="showDetail" id="29w-pN-Ab8"/>
+                                    <segue destination="ejF-AO-zaF" kind="show" id="6FY-Fs-4gu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сервис позволяет найти лучшие треки исполнителей и показывает биографию" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihP-0y-fC1">
@@ -103,7 +103,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reP-QR-uP9">
-                                <rect key="frame" x="100" y="112" width="175" height="35"/>
+                                <rect key="frame" x="100" y="154" width="175" height="35"/>
                                 <color key="backgroundColor" red="0.71590226889999997" green="0.75831013920000001" blue="0.91766744850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -113,12 +113,33 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchButton:" destination="vSB-d3-KZt" eventType="touchUpInside" id="Kt9-OH-t7z"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m46-Qv-hpH">
+                                <rect key="frame" x="16" y="294" width="343" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="621-4h-oPN">
+                                        <rect key="frame" x="8" y="8" width="134" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJC-8E-c8t">
+                                        <rect key="frame" x="150" y="49" width="172" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="49D-ol-Wop"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="reP-QR-uP9" firstAttribute="top" secondItem="49D-ol-Wop" secondAttribute="top" constant="16" id="8ou-Si-Q08"/>
+                            <constraint firstItem="reP-QR-uP9" firstAttribute="top" secondItem="49D-ol-Wop" secondAttribute="top" constant="58" id="8ou-Si-Q08"/>
                             <constraint firstItem="WRz-97-8Tw" firstAttribute="leading" secondItem="49D-ol-Wop" secondAttribute="leading" constant="100" id="D0R-wj-XSY"/>
                             <constraint firstItem="49D-ol-Wop" firstAttribute="bottom" secondItem="WRz-97-8Tw" secondAttribute="bottom" constant="30" id="fJ9-1G-nN8"/>
                             <constraint firstItem="reP-QR-uP9" firstAttribute="leading" secondItem="49D-ol-Wop" secondAttribute="leading" constant="100" id="qln-ER-1to"/>
@@ -129,11 +150,14 @@
                     <navigationItem key="navigationItem" title="Лучшие треки" largeTitleDisplayMode="always" id="aTv-9x-9gH"/>
                     <connections>
                         <outlet property="backButton" destination="WRz-97-8Tw" id="MIm-wm-jOX"/>
+                        <outlet property="bestTrackLabel" destination="CJC-8E-c8t" id="V0B-Ez-p6d"/>
+                        <outlet property="imageViewBestTrack" destination="621-4h-oPN" id="ki3-vj-ojc"/>
+                        <outlet property="viewBestTracks" destination="m46-Qv-hpH" id="dHd-N9-DFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXR-Hs-o51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710" y="308"/>
+            <point key="canvasLocation" x="2084" y="327.88605697151428"/>
         </scene>
         <!--Биография-->
         <scene sceneID="yd2-xg-iZK">
@@ -222,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iW2-iq-WAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2709.5999999999999" y="-369.26536731634184"/>
+            <point key="canvasLocation" x="2102" y="-368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vqq-dB-cBM">
@@ -241,43 +265,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5n-gr-qgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="432.80000000000001" y="-18.440779610194905"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="JB3-cR-QFW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="S5Z-6r-TeD" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="jOn-Yd-Ofe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="JNZ-8M-K0R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ejF-AO-zaF" kind="relationship" relationship="rootViewController" id="jzz-za-lA6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gn-iA-7Ik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1999" y="-369"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="W5n-ET-lG5">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="VCY-hT-SNf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZEM-gh-Auc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vSB-d3-KZt" kind="relationship" relationship="rootViewController" id="6tS-it-HQk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pUx-kP-2g2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1998" y="308"/>
         </scene>
     </scenes>
     <resources>
