@@ -12,7 +12,7 @@ final class BiographyViewController: UIViewController {
     @IBOutlet var backButton: UIButton!
     @IBOutlet var viewDescription: UIView!
     @IBOutlet var nameLabelArtist: UILabel!
-
+    @IBOutlet var imageViewArtist: UIImageView!
     @IBOutlet var bioLabel: UILabel!
     
     private var artist: Artist?
@@ -21,15 +21,16 @@ final class BiographyViewController: UIViewController {
     let searchController = UISearchController()
     let networkManeger = NetworkManager()
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSearchController()
         setupBackButton()
-        navigationItem.hidesBackButton = true
         viewDescription.isHidden = true
+        navigationItem.hidesBackButton = true
+        bioLabel.adjustsFontSizeToFitWidth = false
+        bioLabel.lineBreakMode = .byWordWrapping
+
     }
     
     @IBAction func searchButton(_ sender: UIButton) {
@@ -37,20 +38,20 @@ final class BiographyViewController: UIViewController {
 
     }
     
-        
     private func setupSearchController() {
         
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Кого ищем?"
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.showsCancelButton = false
         
     }
     
     private func setupBackButton() {
         backButton.frame = CGRect(x: 40, y: 240, width: 320, height: 50)
         let attributedString = NSAttributedString(string: NSLocalizedString("Вернуться назад", comment: ""), attributes:[
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16.0),
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18.0),
             NSAttributedString.Key.foregroundColor : UIColor.black,
             NSAttributedString.Key.underlineStyle:1.0
         ])
@@ -69,6 +70,8 @@ extension BiographyViewController: UISearchBarDelegate {
                 self?.artist = jsonResponse.artist
                 self?.nameLabelArtist.text = self?.artist?.name
                 self?.bioLabel.text = self?.artist?.bio.summary
+                self?.imageViewArtist.image = UIImage(named: "1")
+                
             case .failure(let error):
                 print(error)
             }

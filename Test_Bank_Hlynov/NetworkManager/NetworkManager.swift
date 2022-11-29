@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 final class NetworkManager: UIViewController {
     
     func getArtist(url: String, completion: @escaping(Result<JsonResponse, Error>) -> Void) {
@@ -29,9 +28,7 @@ final class NetworkManager: UIViewController {
             }
         }.resume()
     }
-    
-    
-    
+        
     func getBio(url: String, completion: @escaping(Result<JsonResponse, Error>) -> Void) {
         guard let url = URL(string: url) else { return }
         
