@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Поиск музыкальных исполнителей-->
+        <!--Поиск исполнителей-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u86-fy-XfY">
                                 <rect key="frame" x="20" y="568" width="335" height="59"/>
-                                <color key="backgroundColor" red="0.79607843140000001" green="0.53725490200000003" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.89144223929999999" green="0.39928770070000003" blue="0.47842550280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="xH1-cp-AC0"/>
                                 </constraints>
@@ -52,26 +52,23 @@
                                     <segue destination="ejF-AO-zaF" kind="show" id="6FY-Fs-4gu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сервис позволяет найти лучшие треки исполнителей и показывает биографию" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihP-0y-fC1">
-                                <rect key="frame" x="16" y="135" width="343" height="69"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сервис позволяет найти лучшие треки исполнителей и показывает биографию." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihP-0y-fC1">
+                                <rect key="frame" x="16" y="135" width="343" height="62.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <color key="textColor" red="0.48235297199999999" green="0.48235297199999999" blue="0.48235297199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dance" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-lr-z86">
-                                <rect key="frame" x="41" y="212" width="292" height="270"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dance" translatesAutoresizingMaskIntoConstraints="NO" id="Ls2-7e-wdK">
+                                <rect key="frame" x="44" y="222" width="286" height="261"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kpi-lr-z86" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="2Jm-tI-BZj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpi-lr-z86" secondAttribute="trailing" constant="42" id="2ab-P4-Rxi"/>
                             <constraint firstItem="u86-fy-XfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2dq-Um-OCf"/>
-                            <constraint firstItem="kpi-lr-z86" firstAttribute="top" secondItem="ihP-0y-fC1" secondAttribute="bottom" id="3P4-ql-8YV"/>
                             <constraint firstItem="ihP-0y-fC1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="3oO-47-Xst"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u86-fy-XfY" secondAttribute="trailing" constant="20" id="4ta-8Q-Rl2"/>
-                            <constraint firstItem="9De-aU-NS5" firstAttribute="top" secondItem="kpi-lr-z86" secondAttribute="bottom" id="80T-65-ebD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u86-fy-XfY" secondAttribute="bottom" constant="40" id="B0b-OU-WBd"/>
                             <constraint firstItem="ihP-0y-fC1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GeA-yj-QAa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihP-0y-fC1" secondAttribute="trailing" constant="16" id="T9w-jA-ZTZ"/>
@@ -80,11 +77,11 @@
                             <constraint firstItem="u86-fy-XfY" firstAttribute="top" secondItem="9De-aU-NS5" secondAttribute="bottom" constant="19" id="giL-Aj-hj8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Поиск музыкальных исполнителей" largeTitleDisplayMode="always" id="N4q-vM-Gn8"/>
+                    <navigationItem key="navigationItem" title="Поиск исполнителей" largeTitleDisplayMode="always" id="N4q-vM-Gn8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="-19.340329835082461"/>
+            <point key="canvasLocation" x="1138.4000000000001" y="-20.239880059970016"/>
         </scene>
         <!--Лучшие треки-->
         <scene sceneID="JG7-t7-VFQ">
