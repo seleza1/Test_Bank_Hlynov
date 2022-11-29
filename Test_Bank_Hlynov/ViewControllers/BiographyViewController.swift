@@ -51,7 +51,7 @@ final class BiographyViewController: UIViewController {
 
 extension BiographyViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        networkManeger.getTrack { [weak self]result in
+        networkManeger.getTrack { [weak self] result in
             switch result {
             case .success(let track):
                 self?.tracks = track

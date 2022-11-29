@@ -20,22 +20,7 @@ final class BestTrackViewController: UIViewController {
         
         setupSearchController()
         setupBackButton()
-        fetchTrack()
         navigationItem.hidesBackButton = true
-
-    }
-    
-    private func fetchTrack() {
-        networkManager.getBestTrack { result in
-            switch result {
-                
-            case .success(let tracks):
-                self.bestTrack = tracks
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
     }
     
     private func setupSearchController() {
@@ -59,6 +44,14 @@ final class BestTrackViewController: UIViewController {
 
 extension BestTrackViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        networkManager.getBestTrack { [weak self] result in
+            switch result {
+                
+            case .success(let tracks):
+                self?.bestTrack = tracks
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
