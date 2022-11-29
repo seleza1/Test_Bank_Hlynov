@@ -10,20 +10,28 @@ import UIKit
 final class BiographyViewController: UIViewController {
     
     @IBOutlet var backButton: UIButton!
-    
-    @IBOutlet var labelBiography: UILabel!
-    
+    @IBOutlet var viewDescription: UIView!
+    @IBOutlet var nameLabelArtist: UILabel!
+
     private var tracks: [Tracks] = []
 
     let searchController = UISearchController()
     let networkManeger = NetworkManager()
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupSearchController()
         setupBackButton()
         navigationItem.hidesBackButton = true
+        viewDescription.isHidden = true
+    }
+    
+    @IBAction func searchButton(_ sender: UIButton) {
+        viewDescription.isHidden = false
+        getArist()
     }
     
         
@@ -44,13 +52,10 @@ final class BiographyViewController: UIViewController {
             NSAttributedString.Key.underlineStyle:1.0
         ])
         backButton.setAttributedTitle(attributedString, for: .normal)
-        //self.view.addSubview(backButton)
+        self.view.addSubview(backButton)
     }
     
-}
-
-extension BiographyViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    private func getArist() {
         networkManeger.getTrack { [weak self] result in
             switch result {
             case .success(let track):
@@ -59,7 +64,12 @@ extension BiographyViewController: UISearchBarDelegate {
                 print(error)
             }
         }
-        
     }
+    
+}
 
+extension BiographyViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+    }
 }
