@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Поиск музыкальных исполнителей-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,9 +30,6 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="vSB-d3-KZt" kind="show" id="bza-KY-lzs"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9De-aU-NS5">
                                 <rect key="frame" x="20" y="490" width="335" height="59"/>
@@ -49,7 +46,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="ejF-AO-zaF" kind="show" id="DO8-qh-3eV"/>
+                                    <segue destination="S5Z-6r-TeD" kind="showDetail" id="29w-pN-Ab8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сервис позволяет найти лучшие треки исполнителей и показывает биографию" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihP-0y-fC1">
@@ -80,7 +77,7 @@
                             <constraint firstItem="6Kg-fw-gff" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hCs-QW-V7x"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="N4q-vM-Gn8"/>
+                    <navigationItem key="navigationItem" title="Поиск музыкальных исполнителей" largeTitleDisplayMode="always" id="N4q-vM-Gn8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +97,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Вернуться назад"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reP-QR-uP9">
-                                <rect key="frame" x="100" y="112" width="175" height="35"/>
+                                <rect key="frame" x="100" y="16" width="175" height="35"/>
                                 <color key="backgroundColor" red="0.71590226889999997" green="0.75831013920000001" blue="0.91766744850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -135,7 +132,7 @@
         <!--Биография-->
         <scene sceneID="yd2-xg-iZK">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ejF-AO-zaF" customClass="BiographyViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="ejF-AO-zaF" customClass="BiographyViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ksd-Yz-NDL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,12 +141,42 @@
                                 <rect key="frame" x="100" y="602" width="175" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Вернуться назад"/>
+                                <connections>
+                                    <action selector="dismisButton:" destination="ejF-AO-zaF" eventType="touchUpInside" id="VSk-70-14c"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtT-f2-U3j">
+                                <rect key="frame" x="32" y="229" width="311" height="349"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-lB-XKz">
+                                        <rect key="frame" x="8" y="214" width="267" height="135"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iII-Iu-vbM">
+                                        <rect key="frame" x="8" y="140" width="240" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-iv-5D0">
+                                        <rect key="frame" x="35" y="0.0" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="349" id="kvy-WA-a2F"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLW-J7-DbG">
-                                <rect key="frame" x="105" y="112" width="165" height="40"/>
+                                <rect key="frame" x="105" y="154" width="165" height="45"/>
                                 <color key="backgroundColor" red="0.90983361009999997" green="0.76647126669999999" blue="0.91374105220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Wte-98-bfN"/>
+                                    <constraint firstAttribute="height" constant="45" id="iwG-sG-SZH"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
@@ -163,46 +190,19 @@
                                     <action selector="searchButton:" destination="ejF-AO-zaF" eventType="touchUpInside" id="Xnr-IF-RPG"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtT-f2-U3j">
-                                <rect key="frame" x="32" y="162.5" width="311" height="384"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-lB-XKz">
-                                        <rect key="frame" x="8" y="214" width="267" height="135"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-iv-5D0">
-                                        <rect key="frame" x="35" y="0.0" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iII-Iu-vbM">
-                                        <rect key="frame" x="8" y="140" width="240" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="384" id="1FV-NE-05b"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nst-Xv-4vZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MtT-f2-U3j" firstAttribute="top" secondItem="iLW-J7-DbG" secondAttribute="bottom" constant="30" id="0W2-up-UTp"/>
+                            <constraint firstItem="iLW-J7-DbG" firstAttribute="leading" secondItem="nst-Xv-4vZ" secondAttribute="leading" constant="105" id="14e-fr-2ai"/>
                             <constraint firstItem="MtT-f2-U3j" firstAttribute="leading" secondItem="nst-Xv-4vZ" secondAttribute="leading" constant="32" id="383-ml-mS5"/>
+                            <constraint firstItem="nst-Xv-4vZ" firstAttribute="trailing" secondItem="iLW-J7-DbG" secondAttribute="trailing" constant="105" id="9Bg-YN-FT7"/>
+                            <constraint firstItem="iLW-J7-DbG" firstAttribute="top" secondItem="nst-Xv-4vZ" secondAttribute="top" constant="58" id="BAD-Kp-Dza"/>
                             <constraint firstItem="kwV-CC-kad" firstAttribute="leading" secondItem="nst-Xv-4vZ" secondAttribute="leading" constant="100" id="FBw-Gv-rCt"/>
-                            <constraint firstItem="iLW-J7-DbG" firstAttribute="leading" secondItem="nst-Xv-4vZ" secondAttribute="leading" constant="105" id="IdF-yV-2Oe"/>
                             <constraint firstItem="nst-Xv-4vZ" firstAttribute="trailing" secondItem="kwV-CC-kad" secondAttribute="trailing" constant="100" id="JYC-fb-Wc7"/>
-                            <constraint firstItem="iLW-J7-DbG" firstAttribute="centerX" secondItem="MtT-f2-U3j" secondAttribute="centerX" id="Qzn-ka-wWp"/>
                             <constraint firstItem="nst-Xv-4vZ" firstAttribute="bottom" secondItem="kwV-CC-kad" secondAttribute="bottom" constant="30" id="UQ9-9p-6Ok"/>
                             <constraint firstItem="nst-Xv-4vZ" firstAttribute="trailing" secondItem="MtT-f2-U3j" secondAttribute="trailing" constant="32" id="q4W-cc-Ngn"/>
-                            <constraint firstItem="MtT-f2-U3j" firstAttribute="top" secondItem="iLW-J7-DbG" secondAttribute="bottom" constant="10.5" id="qfb-h8-fCb"/>
-                            <constraint firstItem="iLW-J7-DbG" firstAttribute="top" secondItem="nst-Xv-4vZ" secondAttribute="top" constant="16" id="vCb-fq-G44"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Биография" id="n8H-h3-jJ3"/>
@@ -216,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iW2-iq-WAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000.8" y="-375.56221889055473"/>
+            <point key="canvasLocation" x="2709.5999999999999" y="-369.26536731634184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vqq-dB-cBM">
@@ -235,6 +235,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5n-gr-qgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="432.80000000000001" y="-18.440779610194905"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JB3-cR-QFW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="S5Z-6r-TeD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jOn-Yd-Ofe"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="JNZ-8M-K0R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ejF-AO-zaF" kind="relationship" relationship="rootViewController" id="jzz-za-lA6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gn-iA-7Ik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="-369"/>
         </scene>
     </scenes>
     <resources>
