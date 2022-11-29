@@ -11,6 +11,8 @@ final class BiographyViewController: UIViewController {
     
     @IBOutlet var backButton: UIButton!
     
+    @IBOutlet var labelBiography: UILabel!
+    
     private var tracks: [Tracks] = []
 
     let searchController = UISearchController()
@@ -21,16 +23,17 @@ final class BiographyViewController: UIViewController {
         super.viewDidLoad()
         setupSearchController()
         setupBackButton()
+        navigationItem.hidesBackButton = true
     }
     
-
-    
+        
     private func setupSearchController() {
         
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Кого ищем?"
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
+        
     }
     
     private func setupBackButton() {
@@ -41,8 +44,9 @@ final class BiographyViewController: UIViewController {
             NSAttributedString.Key.underlineStyle:1.0
         ])
         backButton.setAttributedTitle(attributedString, for: .normal)
-        self.view.addSubview(backButton)
+        //self.view.addSubview(backButton)
     }
+    
 }
 
 extension BiographyViewController: UISearchBarDelegate {
@@ -57,6 +61,5 @@ extension BiographyViewController: UISearchBarDelegate {
         }
         
     }
-
 
 }

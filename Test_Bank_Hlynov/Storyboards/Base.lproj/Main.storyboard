@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Поиск музыкальных исполнителей-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Test_Bank_Hlynov" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="ejF-AO-zaF" kind="show" id="yLY-OZ-g5F"/>
+                                    <segue destination="ejF-AO-zaF" kind="show" id="DO8-qh-3eV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сервис позволяет найти лучшие треки исполнителей и показывает биографию" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihP-0y-fC1">
@@ -80,10 +80,7 @@
                             <constraint firstItem="6Kg-fw-gff" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hCs-QW-V7x"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Поиск музыкальных исполнителей" largeTitleDisplayMode="always" id="N4q-vM-Gn8"/>
-                    <connections>
-                        <outlet property="biographyButton" destination="9De-aU-NS5" id="nRY-jr-w0z"/>
-                    </connections>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="N4q-vM-Gn8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,25 +157,37 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="3SI-Gh-dBj">
-                                <rect key="frame" x="16" y="269" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="3SI-Gh-dBj">
+                                <rect key="frame" x="16" y="176.5" width="343" height="174"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR8-nZ-vQD">
+                                <rect key="frame" x="55" y="388.5" width="215" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nst-Xv-4vZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nst-Xv-4vZ" firstAttribute="trailing" secondItem="iLW-J7-DbG" secondAttribute="trailing" constant="105" id="3V9-GG-Tbs"/>
+                            <constraint firstItem="aR8-nZ-vQD" firstAttribute="top" secondItem="3SI-Gh-dBj" secondAttribute="bottom" constant="38" id="72n-ny-BzJ"/>
+                            <constraint firstItem="3SI-Gh-dBj" firstAttribute="top" secondItem="iLW-J7-DbG" secondAttribute="bottom" constant="30" id="CPP-uO-1w8"/>
                             <constraint firstItem="kwV-CC-kad" firstAttribute="leading" secondItem="nst-Xv-4vZ" secondAttribute="leading" constant="100" id="FBw-Gv-rCt"/>
                             <constraint firstItem="nst-Xv-4vZ" firstAttribute="trailing" secondItem="kwV-CC-kad" secondAttribute="trailing" constant="100" id="JYC-fb-Wc7"/>
+                            <constraint firstItem="aR8-nZ-vQD" firstAttribute="leading" secondItem="nst-Xv-4vZ" secondAttribute="leading" constant="55" id="SBY-kK-iCO"/>
                             <constraint firstItem="nst-Xv-4vZ" firstAttribute="bottom" secondItem="kwV-CC-kad" secondAttribute="bottom" constant="30" id="UQ9-9p-6Ok"/>
                             <constraint firstItem="iLW-J7-DbG" firstAttribute="leading" secondItem="nst-Xv-4vZ" secondAttribute="leading" constant="105" id="Wbu-gh-jG1"/>
+                            <constraint firstItem="3SI-Gh-dBj" firstAttribute="leading" secondItem="nst-Xv-4vZ" secondAttribute="leading" constant="16" id="YpI-Zu-ZcL"/>
                             <constraint firstItem="iLW-J7-DbG" firstAttribute="top" secondItem="nst-Xv-4vZ" secondAttribute="top" constant="16" id="obw-qr-2AB"/>
+                            <constraint firstItem="nst-Xv-4vZ" firstAttribute="trailing" secondItem="aR8-nZ-vQD" secondAttribute="trailing" constant="105" id="p7F-lq-3l5"/>
+                            <constraint firstItem="nst-Xv-4vZ" firstAttribute="trailing" secondItem="3SI-Gh-dBj" secondAttribute="trailing" constant="16" id="x37-Bv-NMX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Биография" id="n8H-h3-jJ3"/>
                     <connections>
                         <outlet property="backButton" destination="kwV-CC-kad" id="Ji1-oy-aB0"/>
+                        <outlet property="labelBiography" destination="aR8-nZ-vQD" id="4b2-yE-GDS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iW2-iq-WAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

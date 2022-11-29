@@ -13,7 +13,8 @@ struct Tracks: Decodable {
 
 // MARK: - TracksArtist
 struct TracksArtist: Decodable {
-    let name, mbid: String
+    let name: String
+    let mbid: String
     let url: String
     let image: [Image]
     let streamable: String

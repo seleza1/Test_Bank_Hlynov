@@ -21,6 +21,8 @@ final class BestTrackViewController: UIViewController {
         setupSearchController()
         setupBackButton()
         fetchTrack()
+        navigationItem.hidesBackButton = true
+
     }
     
     private func fetchTrack() {
