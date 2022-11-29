@@ -161,17 +161,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtT-f2-U3j">
-                                <rect key="frame" x="32" y="172" width="311" height="255"/>
+                                <rect key="frame" x="32" y="172" width="311" height="336"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Артист" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iII-Iu-vbM">
-                                        <rect key="frame" x="10" y="166" width="240" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Биография" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-lB-XKz">
-                                        <rect key="frame" x="10" y="226" width="102" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-lB-XKz">
+                                        <rect key="frame" x="8" y="214" width="267" height="114"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -181,10 +174,17 @@
                                         <rect key="frame" x="35" y="0.0" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iII-Iu-vbM">
+                                        <rect key="frame" x="8" y="140" width="240" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="255" id="2DV-vU-AWt"/>
+                                    <constraint firstAttribute="height" constant="336" id="YmB-ME-gp9"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -205,6 +205,7 @@
                     <navigationItem key="navigationItem" title="Биография" id="n8H-h3-jJ3"/>
                     <connections>
                         <outlet property="backButton" destination="kwV-CC-kad" id="Ji1-oy-aB0"/>
+                        <outlet property="bioLabel" destination="wvh-lB-XKz" id="ETV-Yr-nUS"/>
                         <outlet property="nameLabelArtist" destination="iII-Iu-vbM" id="dqh-Iy-Bkp"/>
                         <outlet property="viewDescription" destination="MtT-f2-U3j" id="0r1-3Q-Wo1"/>
                     </connections>

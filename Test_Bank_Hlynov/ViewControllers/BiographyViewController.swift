@@ -13,7 +13,10 @@ final class BiographyViewController: UIViewController {
     @IBOutlet var viewDescription: UIView!
     @IBOutlet var nameLabelArtist: UILabel!
 
-    private var tracks: [Tracks] = []
+    @IBOutlet var bioLabel: UILabel!
+    
+    private var artist: Artist?
+    private var bio: Bio?
 
     let searchController = UISearchController()
     let networkManeger = NetworkManager()
@@ -31,7 +34,7 @@ final class BiographyViewController: UIViewController {
     
     @IBAction func searchButton(_ sender: UIButton) {
         viewDescription.isHidden = false
-        getArist()
+
     }
     
         
@@ -54,22 +57,21 @@ final class BiographyViewController: UIViewController {
         backButton.setAttributedTitle(attributedString, for: .normal)
         self.view.addSubview(backButton)
     }
-    
-    private func getArist() {
-        networkManeger.getTrack { [weak self] result in
-            switch result {
-            case .success(let track):
-                self?.tracks = track
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
 }
 
 extension BiographyViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
+        let urlBoigraphy: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=\(searchText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
+        networkManeger.getArtist(url: urlBoigraphy) { [weak self] result in
+            switch result {
+                
+            case .success(let jsonResponse):
+                self?.artist = jsonResponse.artist
+                self?.nameLabelArtist.text = self?.artist?.name
+                self?.bioLabel.text = self?.artist?.bio.summary
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
