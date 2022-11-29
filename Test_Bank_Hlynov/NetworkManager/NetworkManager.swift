@@ -44,28 +44,6 @@ final class NetworkManager: UIViewController {
             
         }.resume()
     }
-    
-    func getBestTrack(completion: @escaping(Result<[BestTracks], Error>) -> Void) {
-        guard let url = URL(string: Url.urlBestTracks) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error { completion(.failure(error)) }
-            guard let data else { return }
-
-            String(data: data, encoding: .utf8).map { print($0) }
-
-            do {
-                let json = try JSONDecoder().decode([BestTracks].self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(json))
-                }
-                
-            } catch let error {
-                print(error)
-            }
-        }.resume()
-    }
-    
 }
 
 

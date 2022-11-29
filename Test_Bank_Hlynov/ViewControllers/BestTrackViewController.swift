@@ -9,9 +9,7 @@ import UIKit
 
 final class BestTrackViewController: UIViewController {
     @IBOutlet var backButton: UIButton!
-    
-    private var bestTrack: [BestTracks] = []
-    
+        
     let searchController = UISearchController()
     let networkManager = NetworkManager()
     
@@ -44,14 +42,6 @@ final class BestTrackViewController: UIViewController {
 
 extension BestTrackViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        networkManager.getBestTrack { [weak self] result in
-            switch result {
-                
-            case .success(let tracks):
-                self?.bestTrack = tracks
-            case .failure(let error):
-                print(error)
-            }
-        }
+        print(searchText)
     }
 }
