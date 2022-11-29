@@ -38,8 +38,9 @@ final class BiographyViewController: UIViewController {
 
     }
     
-    @IBAction func dismisButton(_ sender: UIButton) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    
+    @IBAction func abackButton() {
+        dismiss(animated: true)
     }
     
     private func setupSearchController() {

@@ -21,6 +21,11 @@ final class BestTrackViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
     
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     private func setupSearchController() {
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Кого ищем?"

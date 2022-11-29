@@ -30,6 +30,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="VCY-hT-SNf" kind="showDetail" id="zgM-KE-Aoy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9De-aU-NS5">
                                 <rect key="frame" x="20" y="490" width="335" height="59"/>
@@ -95,9 +98,12 @@
                                 <rect key="frame" x="100" y="602" width="175" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Вернуться назад"/>
+                                <connections>
+                                    <action selector="backButton:" destination="vSB-d3-KZt" eventType="touchUpInside" id="7Jr-0T-Zs7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reP-QR-uP9">
-                                <rect key="frame" x="100" y="16" width="175" height="35"/>
+                                <rect key="frame" x="100" y="112" width="175" height="35"/>
                                 <color key="backgroundColor" red="0.71590226889999997" green="0.75831013920000001" blue="0.91766744850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -127,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXR-Hs-o51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000.0000000000002" y="295.92391304347831"/>
+            <point key="canvasLocation" x="2710" y="308"/>
         </scene>
         <!--Биография-->
         <scene sceneID="yd2-xg-iZK">
@@ -142,7 +148,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Вернуться назад"/>
                                 <connections>
-                                    <action selector="dismisButton:" destination="ejF-AO-zaF" eventType="touchUpInside" id="VSk-70-14c"/>
+                                    <action selector="abackButton" destination="ejF-AO-zaF" eventType="touchUpInside" id="Kw0-om-Wu3"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtT-f2-U3j">
@@ -207,7 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Биография" id="n8H-h3-jJ3"/>
                     <connections>
-                        <outlet property="backButton" destination="kwV-CC-kad" id="Ji1-oy-aB0"/>
+                        <outlet property="backButton" destination="kwV-CC-kad" id="wS8-IO-jTT"/>
                         <outlet property="bioLabel" destination="wvh-lB-XKz" id="ETV-Yr-nUS"/>
                         <outlet property="imageViewArtist" destination="fXd-iv-5D0" id="O5u-52-tcQ"/>
                         <outlet property="nameLabelArtist" destination="iII-Iu-vbM" id="dqh-Iy-Bkp"/>
@@ -254,6 +260,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Gn-iA-7Ik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1999" y="-369"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="W5n-ET-lG5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="VCY-hT-SNf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZEM-gh-Auc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vSB-d3-KZt" kind="relationship" relationship="rootViewController" id="6tS-it-HQk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUx-kP-2g2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="308"/>
         </scene>
     </scenes>
     <resources>
