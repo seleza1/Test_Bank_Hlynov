@@ -8,16 +8,14 @@
 import UIKit
 
 final class BestTrackViewController: UIViewController {
-        
-    let searchController = UISearchController()
-    let networkManager = NetworkManager()
 
     @IBOutlet var backButton: UIButton!
     @IBOutlet var tableView: UITableView!
-
+    
+    private let searchController = UISearchController()
+    private let networkManager = NetworkManager()
     private var tracks: [Track] = []
-
-    var searchBarText: String = ""
+    private var searchBarText: String = ""
 
     
     override func viewDidLoad() {

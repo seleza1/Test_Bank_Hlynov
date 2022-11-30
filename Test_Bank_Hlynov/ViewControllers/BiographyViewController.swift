@@ -14,13 +14,14 @@ final class BiographyViewController: UIViewController {
     @IBOutlet var nameLabelArtist: UILabel!
     @IBOutlet var imageViewArtist: UIImageView!
     @IBOutlet var bioLabel: UILabel!
-    let image = UIImage()
     
+    private let searchController = UISearchController()
+    private let networkManeger = NetworkManager()
     private var artist: Artist?
     private var bio: Bio?
-
-    let searchController = UISearchController()
-    let networkManeger = NetworkManager()
+    private var searchBarText: String = ""
+    
+    let image = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,21 @@ final class BiographyViewController: UIViewController {
         viewDescription.isHidden = false
         searchController.dismiss(animated: true)
         
+        let urlBoigraphy: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=\(searchBarText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
+        
+        networkManeger.getArtist(url: urlBoigraphy) { [weak self] result in
+            switch result {
+                
+            case .success(let jsonResponse):
+                self?.artist = jsonResponse
+                self?.nameLabelArtist.text = self?.artist?.name
+                self?.bioLabel.text = self?.artist?.bio.summary
+                self?.imageViewArtist.image = UIImage(named: "1")
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     
@@ -63,27 +79,14 @@ final class BiographyViewController: UIViewController {
             NSAttributedString.Key.underlineStyle:1.0
         ])
         backButton.setAttributedTitle(attributedString, for: .normal)
-        self.view.addSubview(backButton)
+        view.addSubview(backButton)
     }
 }
 
 extension BiographyViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let urlBoigraphy: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=\(searchText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
-        
-        networkManeger.getArtist(url: urlBoigraphy) { [weak self] result in
-            switch result {
-                
-            case .success(let jsonResponse):
-                self?.artist = jsonResponse
-                self?.nameLabelArtist.text = self?.artist?.name
-                self?.bioLabel.text = self?.artist?.bio.summary
-                self?.imageViewArtist.image = UIImage(named: "1")
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
+        searchBarText = searchText
+
         
     }
 }

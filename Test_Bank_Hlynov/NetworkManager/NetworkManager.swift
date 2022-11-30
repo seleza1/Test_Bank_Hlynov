@@ -32,7 +32,7 @@ final class NetworkManager: UIViewController {
     func getBestTrack(url: String, completion: @escaping(Result<[Track], Error>) -> Void) {
         guard let url = URL(string: url) else { return }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let error { completion(.failure(error)) }
             guard let data else { return }
             
