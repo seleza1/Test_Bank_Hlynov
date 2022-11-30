@@ -48,7 +48,7 @@ final class BiographyViewController: UIViewController {
                 self?.artist = jsonResponse
                 self?.nameLabelArtist.text = self?.artist?.name
                 self?.bioLabel.text = self?.artist?.bio.summary
-                self?.imageViewArtist.image = UIImage(named: "1")
+                self?.imageViewArtist.image = UIImage(named: "Star")
                 
             case .failure(let error):
                 print(error)

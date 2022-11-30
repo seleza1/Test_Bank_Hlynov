@@ -38,7 +38,7 @@ final class BestTrackViewController: UIViewController {
     
     @IBAction func searchButton(_ sender: UIButton) {
  
-        let urlBestTracks: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=\(searchBarText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
+        let urlBestTracks: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=\(searchBarText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json&limit=3"
         networkManager.getBestTrack(urlString: urlBestTracks) { result in
             switch result {
                 
@@ -52,6 +52,7 @@ final class BestTrackViewController: UIViewController {
         }
         
     }
+
     
     private func setupSearchController() {
         navigationItem.searchController = searchController
@@ -88,7 +89,7 @@ extension BestTrackViewController: UITableViewDelegate, UITableViewDataSource {
         
         var content = cell.defaultContentConfiguration()
         content.text = tracks[indexPath.row].name
-        content.image = UIImage(named: "1")
+        content.image = UIImage(named: "Star")
         cell.contentConfiguration = content
         
         return cell

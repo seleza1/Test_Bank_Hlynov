@@ -12,14 +12,11 @@ final class NetworkManager: UIViewController {
     func getArtist(urlString: String, completion: @escaping(Result<Artist, Error>) -> Void) {
         guard let url = URL(string: urlString) else { return }
         
-        var request = URLRequest(url: url)
+        //var request = URLRequest(url: url)
         
-        request.httpBody = urlString.data(using: String.Encoding.utf8)
-        
-        
-        
-        
-        URLSession.shared.dataTask(with: request) { data, _, error in
+         //request.httpBody = urlString.data(using: String.Encoding.utf8)
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let error { completion(.failure(error)) }
             guard let data else { return }
             
@@ -40,13 +37,8 @@ final class NetworkManager: UIViewController {
     
     func getBestTrack(urlString: String, completion: @escaping(Result<[Track], Error>) -> Void) {
         guard let url = URL(string: urlString) else { return }
-        
-        
-        var request = URLRequest(url: url)
-        
-        request.httpBody = urlString.data(using: String.Encoding.utf8)
-        
-        URLSession.shared.dataTask(with: request) { data, _, error in
+                
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let error { completion(.failure(error)) }
             guard let data else { return }
             
