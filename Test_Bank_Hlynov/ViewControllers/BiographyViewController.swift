@@ -14,6 +14,7 @@ final class BiographyViewController: UIViewController {
     @IBOutlet var nameLabelArtist: UILabel!
     @IBOutlet var imageViewArtist: UIImageView!
     @IBOutlet var bioLabel: UILabel!
+    let image = UIImage()
     
     private var artist: Artist?
     private var bio: Bio?
@@ -35,7 +36,8 @@ final class BiographyViewController: UIViewController {
     
     @IBAction func searchButton(_ sender: UIButton) {
         viewDescription.isHidden = false
-
+        searchController.dismiss(animated: true)
+        
     }
     
     
@@ -49,7 +51,8 @@ final class BiographyViewController: UIViewController {
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Кого ищем?"
         searchController.searchBar.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
+        //searchController.obscuresBackgroundDuringPresentation = false
+    
     }
     
     private func setupBackButton() {
@@ -67,11 +70,12 @@ final class BiographyViewController: UIViewController {
 extension BiographyViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let urlBoigraphy: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=\(searchText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
+        
         networkManeger.getArtist(url: urlBoigraphy) { [weak self] result in
             switch result {
                 
-            case .success(let jsonResponse):
-                self?.artist = jsonResponse.artist
+            case .success(let artist):
+                self?.artist = artist
                 self?.nameLabelArtist.text = self?.artist?.name
                 self?.bioLabel.text = self?.artist?.bio.summary
                 self?.imageViewArtist.image = UIImage(named: "1")
@@ -80,5 +84,6 @@ extension BiographyViewController: UISearchBarDelegate {
                 print(error)
             }
         }
+        
     }
 }

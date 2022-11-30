@@ -16,6 +16,12 @@ final class BestTrackViewController: UIViewController {
     @IBOutlet var imageViewBestTrack: UIImageView!
     @IBOutlet var viewBestTracks: UIView!
     @IBOutlet var backButton: UIButton!
+    private var tracks: [Track] = []
+    
+    @IBOutlet var tableView: UITableView!
+    
+    
+    var searchBarText: String = ""
 
     
     override func viewDidLoad() {
@@ -33,13 +39,28 @@ final class BestTrackViewController: UIViewController {
     }
     
     @IBAction func searchButton(_ sender: UIButton) {
-        viewBestTracks.isHidden = false
+ 
+        let urlBestTracks: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=\(searchBarText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
+        networkManager.getBestTrack(url: urlBestTracks) { result in
+            switch result {
+                
+            case .success(let tracks):
+                
+                self.tracks = tracks
+                self.imageViewBestTrack.image = UIImage(named: "1")
+                self.viewBestTracks.isHidden = false
+                self.searchController.dismiss(animated: true)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
     }
     
     private func setupSearchController() {
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Кого ищем?"
-        //searchController.searchBar.delegate = self
+        searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
     }
     
@@ -55,20 +76,9 @@ final class BestTrackViewController: UIViewController {
     }
 }
 
-/*extension BestTrackViewController: UISearchBarDelegate {
+extension BestTrackViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let urlBestTracks: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=\(searchText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
-        networkManager.getBestTracks(url: urlBestTracks) { [weak self] result in
-            switch result {
-                
-            case .success(let jsonResponse):
-                self?.topTracks = jsonResponse.track.name
-                self?.bestTrackLabel.text = self?.topTracks?
-                self?.imageViewBestTrack.image = UIImage(named: "1")
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
+        searchBarText = searchText
+        searchBarText = searchText
     }
-}*/
+}

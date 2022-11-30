@@ -7,3 +7,14 @@
 
 import Foundation
 
+struct GetResponse: Decodable {
+    let toptracks: TopTracks
+}
+
+struct TopTracks: Decodable {
+    let track: [Track]
+}
+
+struct Track: Decodable {
+    let name: String
+}

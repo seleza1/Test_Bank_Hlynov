@@ -9,7 +9,7 @@ import UIKit
 
 final class NetworkManager: UIViewController {
     
-    func getArtist(url: String, completion: @escaping(Result<JsonResponse, Error>) -> Void) {
+    func getArtist(url: String, completion: @escaping(Result<Artist, Error>) -> Void) {
         guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error { completion(.failure(error)) }
@@ -20,7 +20,7 @@ final class NetworkManager: UIViewController {
             do {
                 let json = try JSONDecoder().decode(JsonResponse.self, from: data)
                 DispatchQueue.main.async {
-                    completion(.success(json))
+                    completion(.success(json.artist))
                 }
                 
             } catch let error {
@@ -29,7 +29,7 @@ final class NetworkManager: UIViewController {
         }.resume()
     }
     
-    func getBio(url: String, completion: @escaping(Result<JsonResponse, Error>) -> Void) {
+    func getBestTrack(url: String, completion: @escaping(Result<[Track], Error>) -> Void) {
         guard let url = URL(string: url) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -39,9 +39,9 @@ final class NetworkManager: UIViewController {
             String(data: data, encoding: .utf8).map { print($0) }
             
             do {
-                let json = try JSONDecoder().decode(JsonResponse.self, from: data)
+                let json = try JSONDecoder().decode(GetResponse.self, from: data)
                 DispatchQueue.main.async {
-                    completion(.success(json))
+                    completion(.success(json.toptracks.track))
                 }
                 
             } catch let error {
@@ -49,26 +49,4 @@ final class NetworkManager: UIViewController {
             }
         }.resume()
     }
-    
-    /*func getBestTracks(url: String, completion: @escaping(Result<, Error>) -> Void) {
-     guard let url = URL(string: url) else { return }
-     URLSession.shared.dataTask(with: url) { data, response, error in
-     if let error { completion(.failure(error)) }
-     guard let data else { return }
-     
-     String(data: data, encoding: .utf8).map { print($0) }
-     
-     do {
-     let json = try JSONDecoder().decode(.self, from: data)
-     DispatchQueue.main.async {
-     completion(.success(json))
-     }
-     
-     } catch let error {
-     print(error)
-     }
-     }.resume()
-     }
-     
-     }*/
 }
