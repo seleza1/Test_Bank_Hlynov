@@ -11,16 +11,12 @@ final class BestTrackViewController: UIViewController {
         
     let searchController = UISearchController()
     let networkManager = NetworkManager()
-    
-    @IBOutlet var bestTrackLabel: UILabel!
-    @IBOutlet var imageViewBestTrack: UIImageView!
-    @IBOutlet var viewBestTracks: UIView!
+
     @IBOutlet var backButton: UIButton!
-    private var tracks: [Track] = []
-    
     @IBOutlet var tableView: UITableView!
-    
-    
+
+    private var tracks: [Track] = []
+
     var searchBarText: String = ""
 
     
@@ -30,7 +26,11 @@ final class BestTrackViewController: UIViewController {
         setupSearchController()
         setupBackButton()
         navigationItem.hidesBackButton = true
-        viewBestTracks.isHidden = true
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 80
+        
     }
     
     
@@ -45,11 +45,9 @@ final class BestTrackViewController: UIViewController {
             switch result {
                 
             case .success(let tracks):
-                
                 self.tracks = tracks
-                self.imageViewBestTrack.image = UIImage(named: "1")
-                self.viewBestTracks.isHidden = false
                 self.searchController.dismiss(animated: true)
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -79,6 +77,24 @@ final class BestTrackViewController: UIViewController {
 extension BestTrackViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchBarText = searchText
-        searchBarText = searchText
     }
+}
+
+extension BestTrackViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tracks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = tracks[indexPath.row].name
+        content.image = UIImage(named: "1")
+        cell.contentConfiguration = content
+        
+        return cell
+    }
+    
+    
 }

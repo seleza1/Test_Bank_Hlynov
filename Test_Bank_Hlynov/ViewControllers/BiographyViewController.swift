@@ -74,8 +74,8 @@ extension BiographyViewController: UISearchBarDelegate {
         networkManeger.getArtist(url: urlBoigraphy) { [weak self] result in
             switch result {
                 
-            case .success(let artist):
-                self?.artist = artist
+            case .success(let jsonResponse):
+                self?.artist = jsonResponse
                 self?.nameLabelArtist.text = self?.artist?.name
                 self?.bioLabel.text = self?.artist?.bio.summary
                 self?.imageViewArtist.image = UIImage(named: "1")
