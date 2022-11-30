@@ -9,11 +9,20 @@ import UIKit
 
 final class NetworkManager: UIViewController {
     
-    func getArtist(url: String, completion: @escaping(Result<Artist, Error>) -> Void) {
-        guard let url = URL(string: url) else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
+    func getArtist(urlString: String, completion: @escaping(Result<Artist, Error>) -> Void) {
+        guard let url = URL(string: urlString) else { return }
+        
+        var request = URLRequest(url: url)
+        
+        request.httpBody = urlString.data(using: String.Encoding.utf8)
+        
+        
+        
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
             if let error { completion(.failure(error)) }
             guard let data else { return }
+            
             
             String(data: data, encoding: .utf8).map { print($0) }
             
@@ -29,10 +38,15 @@ final class NetworkManager: UIViewController {
         }.resume()
     }
     
-    func getBestTrack(url: String, completion: @escaping(Result<[Track], Error>) -> Void) {
-        guard let url = URL(string: url) else { return }
+    func getBestTrack(urlString: String, completion: @escaping(Result<[Track], Error>) -> Void) {
+        guard let url = URL(string: urlString) else { return }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        
+        var request = URLRequest(url: url)
+        
+        request.httpBody = urlString.data(using: String.Encoding.utf8)
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
             if let error { completion(.failure(error)) }
             guard let data else { return }
             

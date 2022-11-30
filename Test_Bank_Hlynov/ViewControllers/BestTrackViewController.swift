@@ -39,7 +39,7 @@ final class BestTrackViewController: UIViewController {
     @IBAction func searchButton(_ sender: UIButton) {
  
         let urlBestTracks: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=\(searchBarText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
-        networkManager.getBestTrack(url: urlBestTracks) { result in
+        networkManager.getBestTrack(urlString: urlBestTracks) { result in
             switch result {
                 
             case .success(let tracks):
