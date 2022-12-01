@@ -13,15 +13,14 @@ final class BestTrackViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     private let searchController = UISearchController()
+    private var searchBarText: String = ""
     private let networkManager = NetworkManager()
-    private var randomArray: [Track] = []
-    private var tracks: [Track] = [] {
+    //private var randomArray: [Track] = []
+    private var tracks: [Track] = [] /*{
         didSet {
             self.randomArray = (0..<3).compactMap({ _ in tracks.randomElement() })
         }
-    }
-    private var searchBarText: String = ""
-
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +37,14 @@ final class BestTrackViewController: UIViewController {
     
     @IBAction func searchButton(_ sender: UIButton) {
  
-        let urlBestTracks: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=\(searchBarText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json&limit=3"
-        networkManager.getBestTrack(urlString: urlBestTracks) { result in
+       
+        networkManager.getBestTrack(artistName: searchBarText) { result in
+            
             switch result {
                 
             case .success(let tracks):
-                self.tracks = tracks
+                let shuffledTracks = tracks.shuffled()
+                self.tracks = Array(shuffledTracks.prefix(3))
                 self.searchController.dismiss(animated: true)
                 self.tableView.reloadData()
             case .failure(let error):
@@ -88,7 +89,7 @@ extension BestTrackViewController: UISearchBarDelegate {
 
 extension BestTrackViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        randomArray.count
+        tracks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -39,9 +39,9 @@ final class BiographyViewController: UIViewController {
         viewDescription.isHidden = false
         searchController.dismiss(animated: true)
         
-        let urlBoigraphy: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=\(searchBarText)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
         
-        networkManeger.getBiography(urlString: urlBoigraphy) { [weak self] result in
+        
+        networkManeger.getBiography(artistName: searchBarText) { [weak self] result in
             switch result {
                 
             case .success(let jsonResponse):
