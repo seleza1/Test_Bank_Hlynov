@@ -39,8 +39,6 @@ final class BiographyViewController: UIViewController {
         viewDescription.isHidden = false
         searchController.dismiss(animated: true)
         
-        
-        
         networkManeger.getBiography(artistName: searchBarText) { [weak self] result in
             switch result {
                 

@@ -15,12 +15,7 @@ final class BestTrackViewController: UIViewController {
     private let searchController = UISearchController()
     private var searchBarText: String = ""
     private let networkManager = NetworkManager()
-    //private var randomArray: [Track] = []
-    private var tracks: [Track] = [] /*{
-        didSet {
-            self.randomArray = (0..<3).compactMap({ _ in tracks.randomElement() })
-        }
-    }*/
+    private var tracks: [Track] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
