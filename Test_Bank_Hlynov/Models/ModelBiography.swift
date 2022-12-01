@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct JsonResponse: Decodable {
+struct GetBiography: Decodable {
     let artist: Artist
 }
 

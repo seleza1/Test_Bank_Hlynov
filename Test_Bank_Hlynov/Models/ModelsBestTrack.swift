@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetResponse: Decodable {
+struct GetBestTracks: Decodable {
     let toptracks: TopTracks
 }
 

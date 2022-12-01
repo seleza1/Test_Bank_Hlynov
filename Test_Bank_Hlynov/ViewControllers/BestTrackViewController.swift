@@ -14,7 +14,12 @@ final class BestTrackViewController: UIViewController {
     
     private let searchController = UISearchController()
     private let networkManager = NetworkManager()
-    private var tracks: [Track] = []
+    private var randomArray: [Track] = []
+    private var tracks: [Track] = [] {
+        didSet {
+            self.randomArray = (0..<3).compactMap({ _ in tracks.randomElement() })
+        }
+    }
     private var searchBarText: String = ""
 
     
@@ -24,13 +29,8 @@ final class BestTrackViewController: UIViewController {
         setupSearchController()
         setupBackButton()
         navigationItem.hidesBackButton = true
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = 80
-        
+        setupTableView()
     }
-    
     
     @IBAction func backButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -51,6 +51,13 @@ final class BestTrackViewController: UIViewController {
             }
         }
         
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 95
     }
 
     
@@ -81,7 +88,7 @@ extension BestTrackViewController: UISearchBarDelegate {
 
 extension BestTrackViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tracks.count
+        randomArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,6 +101,4 @@ extension BestTrackViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
