@@ -37,7 +37,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9De-aU-NS5">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="59"/>
-                                        <color key="backgroundColor" red="0.70047253369999996" green="0.75823313000000003" blue="0.92158967260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.89040577409999999" green="0.76645821329999997" blue="0.91374146940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="xkg-DC-Rrd"/>
                                         </constraints>
@@ -55,7 +55,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u86-fy-XfY">
                                         <rect key="frame" x="0.0" y="78" width="311" height="59"/>
-                                        <color key="backgroundColor" red="0.89144223929999999" green="0.39928770070000003" blue="0.47842550280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.88997757430000002" green="0.55526256559999998" blue="0.86669450999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="gZT-W5-6pF"/>
                                         </constraints>
@@ -119,7 +119,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reP-QR-uP9">
                                 <rect key="frame" x="100" y="136" width="175" height="50"/>
-                                <color key="backgroundColor" red="0.71590226889999997" green="0.75831013920000001" blue="0.91766744850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.89040577409999999" green="0.76645821329999997" blue="0.91374146940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nmf-ZW-p3g"/>
                                 </constraints>
@@ -214,7 +214,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLW-J7-DbG">
                                 <rect key="frame" x="105" y="136" width="165" height="50"/>
-                                <color key="backgroundColor" red="0.90983361009999997" green="0.76647126669999999" blue="0.91374105220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.8901960784313725" green="0.76645821329999997" blue="0.91374146940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="iwG-sG-SZH"/>
                                 </constraints>
