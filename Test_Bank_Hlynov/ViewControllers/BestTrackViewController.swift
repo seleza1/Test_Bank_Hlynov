@@ -14,12 +14,11 @@ final class BestTrackViewController: UIViewController {
     
     private let searchController = UISearchController()
     private var searchBarText: String = ""
-    private let networkManager = NetworkManager()
     private var tracks: [Track] = []
-    
+    private let networkManager = NetworkManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupSearchController()
         setupBackButton()
         navigationItem.hidesBackButton = true
@@ -31,12 +30,8 @@ final class BestTrackViewController: UIViewController {
     }
     
     @IBAction func searchButton(_ sender: UIButton) {
- 
-       
         networkManager.getBestTrack(artistName: searchBarText) { result in
-            
             switch result {
-                
             case .success(let tracks):
                 let shuffledTracks = tracks.shuffled()
                 self.tracks = Array(shuffledTracks.prefix(3))
@@ -46,7 +41,6 @@ final class BestTrackViewController: UIViewController {
                 print(error)
             }
         }
-        
     }
     
     private func setupTableView() {
@@ -56,7 +50,6 @@ final class BestTrackViewController: UIViewController {
         tableView.rowHeight = 95
     }
 
-    
     private func setupSearchController() {
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Кого ищем?"

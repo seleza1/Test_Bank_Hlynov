@@ -16,7 +16,7 @@ final class BiographyViewController: UIViewController {
     @IBOutlet var bioLabel: UILabel!
     
     private let searchController = UISearchController()
-    private let networkManeger = NetworkManager()
+    private let networkManager = NetworkManager()
     private var artist: Artist?
     private var bio: Bio?
     private var searchBarText: String = ""
@@ -39,9 +39,8 @@ final class BiographyViewController: UIViewController {
         viewDescription.isHidden = false
         searchController.dismiss(animated: true)
         
-        networkManeger.getBiography(artistName: searchBarText) { [weak self] result in
+        networkManager.getBiography(artistName: searchBarText) { [weak self] result in
             switch result {
-                
             case .success(let jsonResponse):
                 self?.artist = jsonResponse
                 self?.nameLabelArtist.text = self?.artist?.name
@@ -53,7 +52,6 @@ final class BiographyViewController: UIViewController {
             }
         }
     }
-    
     
     @IBAction func abackButton() {
         self.navigationController?.popViewController(animated: true)

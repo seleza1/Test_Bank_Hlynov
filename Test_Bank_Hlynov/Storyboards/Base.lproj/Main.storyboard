@@ -161,7 +161,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Лучшие треки" largeTitleDisplayMode="always" id="aTv-9x-9gH"/>
                     <connections>
-                        <outlet property="backButton" destination="WRz-97-8Tw" id="MIm-wm-jOX"/>
+                        <outlet property="backButton" destination="WRz-97-8Tw" id="CyE-uh-g0e"/>
                         <outlet property="tableView" destination="n8b-kT-a68" id="tQh-Mv-0Fz"/>
                     </connections>
                 </viewController>
