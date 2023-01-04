@@ -15,7 +15,7 @@ enum NetworkError: Error {
 
 final class NetworkManager: UIViewController {
     
-    func getBiography(artistName: String, completion: @escaping(Result<Artist, NetworkError>) -> Void) {
+    func fetch<T: Decodable>(_ type: T.Type, artistName: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         var urlBiography: String =  "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=\(artistName)&api_key=f6b4b86d30378ca8d9f43b560d10cdfe&format=json"
 
         urlBiography.replace(" ", with: "+")
@@ -33,9 +33,9 @@ final class NetworkManager: UIViewController {
             String(data: data, encoding: .utf8).map { print($0) }
             
             do {
-                let json = try JSONDecoder().decode(GetBiography.self, from: data)
+                let type = try JSONDecoder().decode(T.self, from: data)
                 DispatchQueue.main.async {
-                    completion(.success(json.artist))
+                    completion(.success(type))
                 }
             } catch {
                 completion(.failure(.decodingError))

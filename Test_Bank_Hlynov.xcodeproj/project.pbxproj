@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8A1C3B06ECD2809DE417EC7 /* Pods_Test_Bank_Hlynov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448A61ED7358B9CDD1D97B6 /* Pods_Test_Bank_Hlynov.framework */; };
 		CE3366802936850900403B0A /* ModelsBestTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33667F2936850900403B0A /* ModelsBestTrack.swift */; };
 		CE790BCF29349AD800775561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BCE29349AD800775561 /* AppDelegate.swift */; };
 		CE790BD129349AD800775561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BD029349AD800775561 /* SceneDelegate.swift */; };
 		CE790BD329349AD800775561 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE790BD229349AD800775561 /* MainViewController.swift */; };
-		CE790BD629349AD800775561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE790BD429349AD800775561 /* Main.storyboard */; };
 		CE790BD829349ADC00775561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE790BD729349ADC00775561 /* Assets.xcassets */; };
 		CE790BDB29349ADC00775561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE790BD929349ADC00775561 /* LaunchScreen.storyboard */; };
 		CE88DDFE2934A5A600253F6D /* BiographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88DDFD2934A5A600253F6D /* BiographyViewController.swift */; };
@@ -21,12 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23D38F27CAAC2DA8CADBD86A /* Pods-Test_Bank_Hlynov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_Bank_Hlynov.debug.xcconfig"; path = "Target Support Files/Pods-Test_Bank_Hlynov/Pods-Test_Bank_Hlynov.debug.xcconfig"; sourceTree = "<group>"; };
+		34665B33E7B8EF43946964EF /* Pods-Test_Bank_Hlynov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_Bank_Hlynov.release.xcconfig"; path = "Target Support Files/Pods-Test_Bank_Hlynov/Pods-Test_Bank_Hlynov.release.xcconfig"; sourceTree = "<group>"; };
+		8448A61ED7358B9CDD1D97B6 /* Pods_Test_Bank_Hlynov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_Bank_Hlynov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE33667F2936850900403B0A /* ModelsBestTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsBestTrack.swift; sourceTree = "<group>"; };
 		CE790BCB29349AD800775561 /* Test_Bank_Hlynov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_Bank_Hlynov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE790BCE29349AD800775561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE790BD029349AD800775561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE790BD229349AD800775561 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CE790BD529349AD800775561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE790BD729349ADC00775561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE790BDA29349ADC00775561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE790BDC29349ADC00775561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8A1C3B06ECD2809DE417EC7 /* Pods_Test_Bank_Hlynov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C03243A8DBB229AC4E703A0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23D38F27CAAC2DA8CADBD86A /* Pods-Test_Bank_Hlynov.debug.xcconfig */,
+				34665B33E7B8EF43946964EF /* Pods-Test_Bank_Hlynov.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB8BC169522B11CE2B90B2FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8448A61ED7358B9CDD1D97B6 /* Pods_Test_Bank_Hlynov.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE790BC229349AD800775561 = {
 			isa = PBXGroup;
 			children = (
 				CE790BCD29349AD800775561 /* Test_Bank_Hlynov */,
 				CE790BCC29349AD800775561 /* Products */,
+				C03243A8DBB229AC4E703A0A /* Pods */,
+				CB8BC169522B11CE2B90B2FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,7 +92,6 @@
 				CE88DE2B2934F27700253F6D /* Models */,
 				CE88DE2D2934F28800253F6D /* NetworkManager */,
 				CE88DE022934A5D300253F6D /* ViewControllers */,
-				CE88DE032934A5DE00253F6D /* Storyboards */,
 				CE88DE042934A5E600253F6D /* Resources */,
 			);
 			path = Test_Bank_Hlynov;
@@ -96,18 +117,10 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		CE88DE032934A5DE00253F6D /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				CE790BD429349AD800775561 /* Main.storyboard */,
-				CE790BD929349ADC00775561 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
 		CE88DE042934A5E600253F6D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE790BD929349ADC00775561 /* LaunchScreen.storyboard */,
 				CE790BD729349ADC00775561 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -137,6 +150,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE790BDF29349ADC00775561 /* Build configuration list for PBXNativeTarget "Test_Bank_Hlynov" */;
 			buildPhases = (
+				CE5901B029655ED300578EC0 /* ShellScript */,
+				AFBD64334946C7DAC70A0D1F /* [CP] Check Pods Manifest.lock */,
 				CE790BC729349AD800775561 /* Sources */,
 				CE790BC829349AD800775561 /* Frameworks */,
 				CE790BC929349AD800775561 /* Resources */,
@@ -190,11 +205,53 @@
 			files = (
 				CE790BDB29349ADC00775561 /* LaunchScreen.storyboard in Resources */,
 				CE790BD829349ADC00775561 /* Assets.xcassets in Resources */,
-				CE790BD629349AD800775561 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AFBD64334946C7DAC70A0D1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test_Bank_Hlynov-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE5901B029655ED300578EC0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE790BC729349AD800775561 /* Sources */ = {
@@ -215,14 +272,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE790BD429349AD800775561 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE790BD529349AD800775561 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE790BD929349ADC00775561 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -350,6 +399,7 @@
 		};
 		CE790BE029349ADC00775561 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23D38F27CAAC2DA8CADBD86A /* Pods-Test_Bank_Hlynov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -360,7 +410,6 @@
 				INFOPLIST_FILE = Test_Bank_Hlynov/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -381,6 +430,7 @@
 		};
 		CE790BE129349ADC00775561 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34665B33E7B8EF43946964EF /* Pods-Test_Bank_Hlynov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -391,7 +441,6 @@
 				INFOPLIST_FILE = Test_Bank_Hlynov/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

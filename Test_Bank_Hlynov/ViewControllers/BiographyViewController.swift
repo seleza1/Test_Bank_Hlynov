@@ -20,14 +20,11 @@ final class BiographyViewController: UIViewController {
     private var artist: Artist?
     private var bio: Bio?
     private var searchBarText: String = ""
-    
-    let image = UIImage()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSearchController()
-        setupBackButton()
         viewDescription.isHidden = true
         navigationItem.hidesBackButton = true
         bioLabel.adjustsFontSizeToFitWidth = false
@@ -39,7 +36,7 @@ final class BiographyViewController: UIViewController {
         viewDescription.isHidden = false
         searchController.dismiss(animated: true)
         
-        networkManager.getBiography(artistName: searchBarText) { [weak self] result in
+        networkManager.fetch(Artist.self, artistName: searchBarText) { [weak self] result in
             switch result {
             case .success(let jsonResponse):
                 self?.artist = jsonResponse
@@ -64,17 +61,6 @@ final class BiographyViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
     
-    }
-    
-    private func setupBackButton() {
-        backButton.frame = CGRect(x: 40, y: 240, width: 320, height: 50)
-        let attributedString = NSAttributedString(string: NSLocalizedString("Вернуться назад", comment: ""), attributes:[
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18.0),
-            NSAttributedString.Key.foregroundColor : UIColor.black,
-            NSAttributedString.Key.underlineStyle:1.0
-        ])
-        backButton.setAttributedTitle(attributedString, for: .normal)
-        view.addSubview(backButton)
     }
 }
 
